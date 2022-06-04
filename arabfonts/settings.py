@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+import sys
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,13 +24,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)04-w8#5xa^^pv7o^y-3f+ej9aojhsd!k=7mzk9n!+s(5h&4uh'
+# SECRET_KEY = 'django-insecure-)04-w8#5xa^^pv7o^y-3f+ej9aojhsd!k=7mzk9n!+s(5h&4uh'
+from django.core.management.utils import get_random_secret_key
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['localhost', '*', '127.0.0.1', 'arabfonts.herokuapp.com', 'arabfontproject.herokuapp.com', 'arabfontproject.herokuapp']
 
+# ALLOWED_HOSTS = ['localhost', '*', '127.0.0.1', 'arabfonts.herokuapp.com', 'arabfontproject.herokuapp.com', 'arabfontproject.herokuapp']
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 # Application definition
 
