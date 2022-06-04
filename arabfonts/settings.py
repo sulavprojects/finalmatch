@@ -34,7 +34,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
 # ALLOWED_HOSTS = ['localhost', '*', '127.0.0.1', 'arabfonts.herokuapp.com', 'arabfontproject.herokuapp.com', 'arabfontproject.herokuapp']
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost", "arabfonts.org", "www.arabfonts.org", "jellyfish-app-hvev3.ondigitalocean.app").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 # Application definition
 
