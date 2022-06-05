@@ -1,0 +1,247 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+{% load static %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Arabic Fonts Download</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="allfonts">Allfonts</a></li>
+            <li>Font download</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+      
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry entry-single">
+
+              >
+
+              
+
+              <h2 class="entry-title">
+                <a href="/allfonts">{{fonts_obj.title}}</a>
+              </h2>
+
+              {% comment %} <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> {% endcomment %}
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                  {{fonts.title}}
+                </p>
+
+                <p>
+                  {{fonts_obj.short_discription}}
+                </p>
+{% comment %} 
+                <blockquote>
+                 
+                </blockquote> {% endcomment %}
+
+                
+                <img src="/media/{{fonts_obj.header_image}}" class="img-fluid" alt="">
+
+                <div class="read-more">
+                  <a href="{{fonts_obj.upload_fonts.url}}">Download Now</a>
+                </div>
+                {% comment %} <form action="{{ download. upload_fonts.url }}" method="get">
+                              <input type="hidden" name="upload_fonts.url" value="{{upload_fonts.url}}">
+                              <button type="submit" class="btn btn-sm btn-primary"> download now</button>
+                </form> {% endcomment %}
+
+                <h3>{{fonts_obj.title}}.</h3>
+                <p>
+                  {{fonts_obj.long_discription|safe}}
+                </p>
+
+                <h2>Character Maping</h2>
+                        <img src="/media/{{fonts_obj.character_map_img}}"
+                
+
+              </div>
+
+              <div class="entry-footer">
+                <i class="bi bi-folder"></i>
+                <ul class="cats">
+                  <li><a href="#">Business</a></li>
+                </ul>
+
+                <i class="bi bi-tags"></i>
+                <ul class="tags">
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Tips</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              </div>
+              
+            </article>
+
+
+            <section id="blog" class="blog">
+              <div class="container" data-aos="fade-up">
+        
+                <div class="">
+        
+                  <div class="">
+        
+                    <article class="entry">
+
+
+
+                        
+        
+                      
+        
+                      {% for fonts in allfonts %}
+        
+                      <h2>{{fonts.title}}</h2>
+                      <a href="{% url 'fonts_details' fonts.slug%}"><img src="/media/{{fonts.header_image}}" class="img-fluid" alt=""></a>   
+                      
+        
+                      <div class="entry-meta">
+                        {% comment %} <ul>
+                          <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'fonts_details' fonts.slug%}">John Doe</a></li>
+                          
+                          <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'fonts_details' fonts.slug%}">12 Comments</a></li>
+                        </ul> {% endcomment %}
+                      </div>
+        
+                      
+        
+                      <div class="entry-content">
+                        <p>
+                          {{fonts.short_discription}}
+                        </p>
+                        <div class="read-more">
+                          <a href="{% url 'fonts_details' fonts.slug %}">Download Now</a>
+                        </div>
+                      </div>
+                      {% endfor %} 
+        
+                    </article>
+
+            
+      
+          
+
+            {% comment %} <!-- End blog entry -->
+
+
+              </div>
+
+            </div><!-- End blog comments -->
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            {% comment %} <div class="sidebar">
+
+              <h3 class="sidebar-title">Search</h3>
+              <div class="sidebar-item search-form">
+                <form action="">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+
+              <h3 class="sidebar-title">Categories</h3>
+              <div class="sidebar-item categories">
+                <ul>
+                  <li><a href="#">General <span>(25)</span></a></li>
+                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
+                  <li><a href="#">Travel <span>(5)</span></a></li>
+                  <li><a href="#">Design <span>(22)</span></a></li>
+                  <li><a href="#">Creative <span>(8)</span></a></li>
+                  <li><a href="#">Educaion <span>(14)</span></a></li>
+                </ul>
+              </div><!-- End sidebar categories-->
+
+              <h3 class="sidebar-title">Recent Posts</h3>
+              <div class="sidebar-item recent-posts">
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-1.jpg" alt="">
+                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-2.jpg" alt="">
+                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-3.jpg" alt="">
+                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-4.jpg" alt="">
+                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/blog/blog-recent-5.jpg" alt="">
+                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
+                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                </div>
+
+              </div><!-- End sidebar recent posts--> {% endcomment %}
+
+              <h3 class="sidebar-title">Tags</h3>
+              {% comment %} <div class="sidebar-item tags">
+                <ul>
+                  <li><a href="#">App</a></li>
+                  <li><a href="#">IT</a></li>
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Mac</a></li>
+                  <li><a href="#">Design</a></li>
+                  <li><a href="#">Office</a></li>
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Studio</a></li>
+                  <li><a href="#">Smart</a></li>
+                  <li><a href="#">Tips</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              </div><!-- End sidebar tags--> {% endcomment %}
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Single Section -->
+
+  </main><!-- End #main -->
+ {% endblock %}

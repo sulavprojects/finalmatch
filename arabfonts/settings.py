@@ -29,7 +29,7 @@ from django.core.management.utils import get_random_secret_key
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
+# DEBUG = True
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'froala_editor',
     'home',
 ]
 
